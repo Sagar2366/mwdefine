@@ -4,7 +4,8 @@ from typing import Optional
 import requests
 
 MW_ENDPOINT = (
-    "https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={key}"
+    "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    "{word}?key={key}"
 )
 
 
