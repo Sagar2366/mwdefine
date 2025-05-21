@@ -1,7 +1,7 @@
 """API module for interacting with Merriam-Webster Collegiate Dictionary."""
 
-import requests
 from typing import Optional
+import requests
 
 MW_ENDPOINT = (
     "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
