@@ -25,8 +25,8 @@ def main():
         help="Merriam-Webster API key (or set MW_API_KEY)",
     )
     parser.add_argument(
-        "--raw", 
-        action="store_true", 
+        "--raw",
+        action="store_true",
         help="Show raw API response"
     )
     args = parser.parse_args()
