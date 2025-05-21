@@ -7,6 +7,7 @@ import json
 from mwdefine.api import lookup
 from mwdefine.formatter import pretty
 
+
 def main():
     """
     Entry point for the mwdefine CLI.
@@ -35,9 +36,11 @@ def main():
 
     entry = lookup(args.api_key, args.word)
     if args.raw:
-
         print(
-            json.dumps(entry.__dict__ if entry else {}, indent=2)
+            json.dumps(
+                entry.__dict__ if entry else {},
+                indent=2
+            )
         )
         return
 
