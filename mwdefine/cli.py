@@ -24,7 +24,11 @@ def main():
         default=os.getenv("MW_API_KEY"),
         help="Merriam-Webster API key (or set MW_API_KEY)",
     )
-    parser.add_argument("--raw", action="store_true", help="Show raw API response")
+    parser.add_argument(
+        "--raw", 
+        action="store_true", 
+        help="Show raw API response"
+    )
     args = parser.parse_args()
 
     if not args.api_key:
