@@ -1,7 +1,7 @@
 """API module for interacting with Merriam-Webster Collegiate Dictionary."""
 
-from typing import Optional
 import requests
+from typing import Optional
 
 MW_ENDPOINT = (
     "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
@@ -9,7 +9,7 @@ MW_ENDPOINT = (
 )
 
 
-class MWEntry:
+class MWEntry:  # pylint: disable=R0903
     """Represents a dictionary entry from Merriam-Webster API."""
 
     def __init__(self, entry_dict):
@@ -40,9 +40,9 @@ def lookup(api_key: str, word: str) -> Optional[MWEntry]:
         Optional[MWEntry]: An MWEntry object if found, else None.
     """
     url = MW_ENDPOINT.format(word=word, key=api_key)
-    response = requests.get(url)
+    response = requests.get(url, timeout=10)
     if response.status_code != 200:
-        raise Exception(f"API error: {response.status_code}")
+        raise requests.HTTPError(f"API error: {response.status_code}")
     data = response.json()
     if (
         not data
