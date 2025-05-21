@@ -37,7 +37,9 @@ def main():
     if args.raw:
         import json
 
-        print(json.dumps(entry.__dict__ if entry else {}, indent=2))
+        print(
+            json.dumps(entry.__dict__ if entry else {}, indent=2)
+        )
         return
 
     print(pretty(entry))
