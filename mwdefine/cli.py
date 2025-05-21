@@ -5,7 +5,7 @@ import os
 import sys
 from mwdefine.api import lookup
 from mwdefine.formatter import pretty
-
+import json
 
 def main():
     """
@@ -35,7 +35,6 @@ def main():
 
     entry = lookup(args.api_key, args.word)
     if args.raw:
-        import json
 
         print(
             json.dumps(entry.__dict__ if entry else {}, indent=2)
