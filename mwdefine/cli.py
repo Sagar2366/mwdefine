@@ -3,9 +3,9 @@
 import argparse
 import os
 import sys
+import json
 from mwdefine.api import lookup
 from mwdefine.formatter import pretty
-import json
 
 def main():
     """
